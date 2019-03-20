@@ -6,7 +6,8 @@ def fitness(x, C, W, Bag_Vmax, c):
     total_W = np.sum(x * W)
     total_C = np.sum(x * C)
     if total_C > Bag_Vmax:
-        total_W = total_W - alpha * (total_C - Bag_Vmax)
+        # total_W = total_W - alpha * (total_C - Bag_Vmax)
+        total_W = 0
     return total_W
 
 np.random.seed(0)
