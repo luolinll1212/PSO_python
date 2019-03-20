@@ -2,7 +2,7 @@
 import numpy as np
 
 def fitness(x):
-    return -x**2 + 3
+    pass
 
 EO = 1e-6
 particlesize = 50
