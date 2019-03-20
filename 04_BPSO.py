@@ -15,13 +15,13 @@ np.random.seed(0)
 C = open('c.txt').readlines().strip()
 W = open('w.txt').readlines().strip()
 
-particlesize = 50
+particlesize = 100
 dim = 10
-MaxNum = 100
+MaxNum = 200
 v_bound = [-10, 10]
-w_bound = [0.4, 0.8]
+w_bound = [0.2, 0.8]
 c1 = c2 = 0.5
-Bag_Vmax = 300
+Bag_Vmax = 1000
 alpha = 3
 
 x = np.random.randint(0, 2, (particlesize, dim))
