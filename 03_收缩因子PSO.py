@@ -24,7 +24,6 @@ global_best_p = x[np.argmax(fit)]
 global_best_fitness = np.max(fit)
 
 # train
-record = np.zeros(shape=(MaxNum))
 for step in range(MaxNum):
     r1 = np.random.rand(particlesize, dim)
     r2 = np.random.rand(particlesize, dim)
@@ -44,10 +43,8 @@ for step in range(MaxNum):
         global_best_p = personal_p[np.argmax(personal_fitness)]
         global_best_fitness = np.max(personal_fitness)
 
-    record[step] = global_best_fitness
     # if step ==1 and abs(record[step]) < EO:
     #     break
     # if np.abs(record[step] - record[step-1]) < EO:
     #     break
 
-print(record)
