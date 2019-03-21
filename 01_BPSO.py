@@ -42,13 +42,13 @@ for step in np.arange(MaxNum):
         r1 = np.random.rand()
         r2 = np.random.rand()
 
-        w = w_bound[1] - (w_bound[1] - w_bound[0]) * step / MaxNum  # 惯性权重动态衰减
+        w = w_bound[1] - (w_bound[1] - w_bound[0]) * step / MaxNum  
         v[i, :] = w * v[i, :] + c1 * r1 * (personal_p[i, :] - x[i, :]) + c2 * r2 * (global_best_p - x[i, :])
         for j in np.arange(dim):
             if v[i, j] > np.max(v_bound) or v[i, j] < np.min(v_bound):
                 v[i, j] = np.random.uniform(v_bound[0], v_bound[1])
 
-        vx = 1 / (1 + np.exp(-v[i, :]))  # sigmoid函数
+        vx = 1 / (1 + np.exp(-v[i, :]))  # sigmoid function
         for j in np.arange(dim):
             if vx[j] > np.random.rand():
                 x[i, j] = 1
