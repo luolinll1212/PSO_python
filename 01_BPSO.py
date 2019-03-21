@@ -6,11 +6,10 @@ def fitness(x, C, W, Bag_Vmax, c):
     total_W = np.sum(x * W)
     total_C = np.sum(x * C)
     if total_C > Bag_Vmax:
-        # total_W = total_W - alpha * (total_C - Bag_Vmax)
-        total_W = 0
+        total_W = total_W - alpha * (total_C - Bag_Vmax)
+        # total_W = 0
     return total_W
 
-np.random.seed(0)
 
 C = open('c.txt').readlines().strip()
 W = open('w.txt').readlines().strip()
@@ -35,7 +34,7 @@ personal_fitness = fit
 global_best_p = personal_p[np.argmax(personal_fitness)]
 global_best_fitness = np.max(personal_fitness)
 
-# 迭代
+# train
 for step in np.arange(MaxNum):
     vx = np.zeros(dim)
     for i in np.arange(particlesize):
