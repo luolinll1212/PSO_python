@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import copy
 import numpy as np
 
 
@@ -29,8 +30,8 @@ v = np.random.uniform(v_bound[0], v_bound[1], (particlesize, dim))
 fit = np.zeros(particlesize)
 for i in np.arange(particlesize):
     fit[i] = fitness(x[i, :], C, W, Bag_Vmax, alpha)
-personal_p = x
-personal_fitness = fit
+personal_p = copy.deepcopy(x)
+personal_fitness = copy.deepcopy(fit)
 global_best_p = personal_p[np.argmax(personal_fitness)]
 global_best_fitness = np.max(personal_fitness)
 
