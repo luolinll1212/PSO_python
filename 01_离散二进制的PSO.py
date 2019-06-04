@@ -12,8 +12,8 @@ def fitness(x, C, W, Bag_Vmax, c):
     return total_W
 
 
-C = open('c.txt').readlines().strip()
-W = open('w.txt').readlines().strip()
+C = [95,75,23,73,50,22,6,57,89,98]   # volume
+W = [89,59,19,43,100,72,44,16,7,64]  # worth
 
 particlesize = 100
 dim = 10
